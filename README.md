@@ -1,1 +1,1 @@
-created a new repo
+created a new repository
