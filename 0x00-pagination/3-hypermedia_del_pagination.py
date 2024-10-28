@@ -7,11 +7,12 @@ import math
 from typing import Dict, List, Tuple
 
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
-    """Retrieves the index range from a given page and page size.
-    """
+def index_range(page: int, page_size: int) -> tuple:
+    """corresponding to the range of indexes to return in a list."""
 
-    return ((page - 1) * page_size, ((page - 1) * page_size) + page_size)
+    start_index = (page - 1) * page_size
+    end_index = start_index + page_size
+    return (start_index, end_index)
 
 
 class Server:
