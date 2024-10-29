@@ -8,9 +8,9 @@ class BasicCache(BaseCaching):
 
     def put(self, key, item):
         """Assign to the dictionary the value of the key"""
-        
+
         if key is not None and item is not None:
-            self.cache_data[Key] = item
+            self.cache_data[key] = item
 
     def get(self, key):
         """Return the value in self.cache_daya linked to key"""
