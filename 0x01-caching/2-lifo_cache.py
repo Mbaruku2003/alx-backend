@@ -15,9 +15,9 @@ class LIFOCache(BaseCaching):
     def put(self, key, item):
         """discards the last item using Lifo algorythm."""
 
-        if key is None and item is None:
+        if key is None or item is None:
             return
-        if len(self.cache_data) > BaseCaching.MAX_ITEMS:
+        if len(self.cache_data) >= BaseCaching.MAX_ITEMS:
             last_key = self.keys_order.pop()
             del self.cache_data[last_key]
             print(f"DISCARD: {last_key}")
