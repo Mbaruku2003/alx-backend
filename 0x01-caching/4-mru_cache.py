@@ -11,7 +11,7 @@ class MRUCache(BaseCaching):
         """we will do attribute initialisation."""
 
         super().__init__()
-        self.cache_data = OrderedDict
+        self.cache_data = OrderedDict()
 
     def put(self, key, item):
         """we will load values into the key."""
