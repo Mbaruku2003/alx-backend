@@ -3,7 +3,7 @@
 from base_caching import BaseCaching
 
 
-def FIFOCache(BaseCaching):
+class FIFOCache(BaseCaching):
     """You can overload def __init__(self)."""
 
     def __init__(self):
