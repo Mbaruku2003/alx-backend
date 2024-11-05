@@ -4,6 +4,7 @@ from flask import Flask, render_template, request, g
 from flask_babel import Babel, _
 import typing
 
+
 app = Flask(__name__)
 
 
@@ -26,6 +27,7 @@ def get_locale() -> str:
     """returns an expected language that fits the best."""
 
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
 
 @app.route('/')
 def index() -> str:
