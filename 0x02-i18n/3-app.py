@@ -8,6 +8,8 @@ app = Flask(__name__)
 
 
 class Config:
+    """Created  a new file."""
+
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -20,13 +22,13 @@ babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """returns an expected language that fits the best."""
 
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 @app.route('/')
-def index():
+def index() -> str:
     """Render template."""
 
     return render_template('3-index.html')
