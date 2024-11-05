@@ -5,12 +5,13 @@
 #
 msgid "home_title"
 msgstr "Bienvenue chez Holberton"
+
 msgid "home_header"
 msgstr "Bonjour monde!"
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2024-11-05 18:38+0300\n"
-"PO-Revision-Date: 2024-11-05 18:38+0300\n"
+"POT-Creation-Date: 2024-11-05 21:12+0300\n"
+"PO-Revision-Date: 2024-11-05 21:12+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: fr\n"
 "Language-Team: fr <LL@li.org>\n"
