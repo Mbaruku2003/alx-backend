@@ -8,6 +8,8 @@ app = Flask(__name__)
 
 
 class Config:
+    """created a config file."""
+
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -20,10 +22,11 @@ babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """returns an expected language that fits the best."""
 
     return request.accept_languages.best_match(["en"])
+
 
 @app.route('/')
 def index():
