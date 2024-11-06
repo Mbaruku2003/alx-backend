@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 
 class Config:
-    """Created  a new file."""
+    """Created  a new config file for the project."""
 
     LANGUAGES: List[str] = ["en", "fr"]
     BABEL_DEFAULT_LOCALE: str = "en"
@@ -34,7 +34,7 @@ babel.init_app(app, locale_selector=get_locale)
 
 @app.route('/')
 def index() -> str:
-    """Render template."""
+    """Render template for the index."""
 
     return render_template('3-index.html')
 
