@@ -1,17 +1,18 @@
 #!/usr/bin/env python3
 """ basic flask app."""
 from flask import Flask, render_template, request
-from flask_babel import Babel, _
+from flask_babel import Babel, _  # type: ignore
 import typing
-from typing import Optional
+from typing import Optional, List
 
 app = Flask(__name__)
+# mypy: ignore-missing-imports
 
 
 class Config:
     """Created  a new file."""
 
-    LANGUAGES = ["en", "fr"]
+    LANGUAGES: List[str] = ["en", "fr"]
     BABEL_DEFAULT_LOCALE: str = "en"
     BABEL_DEFAULT_TIMEZONE: str = "UTC"
 
@@ -22,11 +23,13 @@ app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
-@babel.localeselector
 def get_locale() -> Optional[str]:
     """returns an expected language that fits the best."""
 
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
+
+babel.init_app(app, locale_selector=get_locale)
 
 
 @app.route('/')
