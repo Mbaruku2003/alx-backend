@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ basic flask app."""
-from flask import Flask, render_template, request, g
+from flask import Flask, render_template, request
 from flask_babel import Babel, _
 import typing
 from typing import Optional
@@ -11,13 +11,13 @@ app = Flask(__name__)
 class Config:
     """Created  a new file."""
 
-    LANGUAGES: list[str] = ["en", "fr"]
+    LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE: str = "en"
     BABEL_DEFAULT_TIMEZONE: str = "UTC"
 
 
 app.config.from_object(Config)
-
+app.url_map.strict_slashes = False
 
 babel = Babel(app)
 
